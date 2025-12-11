@@ -1,0 +1,83 @@
+version: "3.8"
+
+services:
+  nginx:
+    image: nginx:latest
+    container_name: proxy-nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - encuesta1
+      - encuesta2
+      - encuesta3
+      - chiste
+      - mysql
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: survey
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./bd/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      - mysql_data:/var/lib/mysql
+
+  encuesta1:
+    build: ./encuesta
+    container_name: encuesta1
+    environment:
+      DB_HOST: mysql
+      DB_NAME: survey
+      DB_USER: root
+      DB_PASS: root
+    depends_on:
+      - mysql
+    expose:
+      - "80"
+
+  encuesta2:
+    build: ./encuesta
+    container_name: encuesta2
+    environment:
+      DB_HOST: mysql
+      DB_NAME: survey
+      DB_USER: root
+      DB_PASS: root
+    depends_on:
+      - mysql
+    expose:
+      - "80"
+
+  encuesta3:
+    build: ./encuesta
+    container_name: encuesta3
+    environment:
+      DB_HOST: mysql
+      DB_NAME: survey
+      DB_USER: root
+      DB_PASS: root
+    depends_on:
+      - mysql
+    expose:
+      - "80"
+
+  chiste:
+    build: ./chiste
+    container_name: chiste
+    environment:
+      DB_HOST: mysql
+      DB_NAME: survey
+      DB_USER: root
+      DB_PASS: root
+    depends_on:
+      - mysql
+    expose:
+      - "80"
+
+volumes:
+  mysql_data:
