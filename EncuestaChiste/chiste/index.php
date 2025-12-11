@@ -19,10 +19,10 @@ try {
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Chiste informático</title>
+    <title>Chiste de Chiquito </title>
 </head>
 <body>
-    <h1>Chiste informático aleatorio</h1>
+    <h1>Chiste de chiquito de la calzada aleatorio</h1>
     <p><?php echo $chiste; ?></p>
 </body>
 </html>

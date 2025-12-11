@@ -47,7 +47,7 @@ try {
             <input type="radio" name="voto" value="no" required> No
         </label>
         <br><br>
-        <button type="submit">Votar</button>
+        <button type="submit">Votar ahora</button>
     </form>
 
     <h2>Resultados totales</h2>
