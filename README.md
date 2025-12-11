@@ -128,9 +128,10 @@ CREATE TABLE IF NOT EXISTS chistes (
 );
 
 INSERT INTO chistes (texto) VALUES
-  ('Primer chiste de ejemplo'),
-  ('Segundo chiste de ejemplo'),
-  ('Tercer chiste de ejemplo');
+  ('¡Paparr, llévame al circorr! No, no, el que quiera verte que venga a casa'),
+  ('¡Feliz año nuevo a todos, señores! ¿Cómo que Feliz Año nuevo a todos si estamos en agosto? Uy qué bronca me va a echar mi mujer, nunca me he retrasado tanto..'),
+  ('Mamarr, mamarr, ha venido papá borracho y se ha caído en el water. ¡Quitale la cartera y tira de la cisterna!'),
+  ('Le dice un padre a un niño: Dime una mentira, hijo. ¡¡¡Paparr, paparr, paparr!!!');
 ```
 
 Este script se ejecuta cuando arranca MySQL por primera vez, asi que las tablas estan listas.
@@ -179,8 +180,7 @@ Así cuando escribo esos dominios en el navegador, van a mi máquina.
 En la terminal hago:
 
 ```bash
-docker compose build
-docker compose up
+docker-compose up --build
 ```
 
 El primero construye las imágenes, el segundo arranca todo. Veo en la terminal como se inicializa todo, MySQL arranca, Apache también, y Nginx empieza a escuchar.
@@ -212,6 +212,7 @@ Eso significa que el balanceo está funcionando bien.
 - Windows 11 (o Linux/Mac).
 - Docker Desktop instalado.
 - VS Code.
+- Git.
 - GitHub Desktop (opcional).
 
 ## Los errores que tuve
@@ -239,4 +240,3 @@ Basicamente aprendí:
 - Mapear dominios locales en Windows.
 - Como evitar duplicar datos (POST-Redirect-GET).
 
-Y ahora el proyecto está en GitHub para que lo vea quien quiera.
