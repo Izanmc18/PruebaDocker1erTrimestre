@@ -240,3 +240,5 @@ Basicamente aprendí:
 - Mapear dominios locales en Windows.
 - Como evitar duplicar datos (POST-Redirect-GET).
 
+## Autor
+- [@Izanmc18](https://www.github.com/Izanmc18)
